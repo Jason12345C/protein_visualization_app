@@ -29,10 +29,12 @@ Requirements
 - **Dependencies**: Python (with libraries such as NumPy, Pandas, Matplotlib), JavaScript (for web-based interfaces), and cloud-based storage options (if applicable).
 
 .. toctree::
-
    :maxdepth: 2
+   
    install
    tutorial
+   preprocessing
+   view
    .. :caption: 
    .. Contents:
 
