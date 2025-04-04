@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preprocessing &mdash; MIST-Explorer March 2025 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=30eb7d5b"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="View" href="view.html" />
+    <link rel="prev" title="Tutorial" href="tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MIST-Explorer
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Preprocessing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-image-manipulation">Basic Image Manipulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#crop">Crop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rotate">Rotate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#image-alignment">Image Alignment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#align-with-blue-color">Align with Blue Color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alignment-layer">Alignment Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cell-layer">Cell Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#protein-detection-layer">Protein Detection Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alignment-settings">Alignment Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#smoothing">Smoothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cell-segmentation">Cell Segmentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#select-channel">Select Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pre-trained-2d-model">Pre-trained 2D Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#segmentation-parameters">Segmentation Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#technical-details">Technical Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-tips">Usage Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="view.html">View</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MIST-Explorer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Preprocessing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/preprocessing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="preprocessing">
+<h1>Preprocessing<a class="headerlink" href="#preprocessing" title="Link to this heading"></a></h1>
+<p>The Preprocessing tab provides essential image preparation functionality needed before analysis of scientific images, particularly for protein visualization. This tab contains several key tools for manipulating and optimizing images.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To include the preprocessing tab image in this documentation, save a screenshot of the preprocessing tab to the docs/source/_static directory with the filename “preprocessing_tab.png”.</p>
+</div>
+<a class="reference internal image-reference" href="_images/preprocessing_tab.png"><img alt="Preprocessing tab interface" src="_images/preprocessing_tab.png" style="width: 600px;" />
+</a>
+<section id="basic-image-manipulation">
+<h2>Basic Image Manipulation<a class="headerlink" href="#basic-image-manipulation" title="Link to this heading"></a></h2>
+<section id="crop">
+<h3>Crop<a class="headerlink" href="#crop" title="Link to this heading"></a></h3>
+<p>The cropping tool allows you to select a region of interest within your image. Two options are available:</p>
+<ul class="simple">
+<li><p><strong>Image Selection Tool</strong>: Click the image icon to manually select a portion of your image to crop.</p></li>
+<li><p><strong>Clear Selection</strong>: Click the X icon to clear your current selection and start over.</p></li>
+</ul>
+</section>
+<section id="rotate">
+<h3>Rotate<a class="headerlink" href="#rotate" title="Link to this heading"></a></h3>
+<p>The rotation tool provides a slider to adjust the orientation of your image. After setting the desired rotation angle:</p>
+<ul class="simple">
+<li><p>Click <strong>Ok</strong> to apply the rotation.</p></li>
+</ul>
+</section>
+</section>
+<section id="image-alignment">
+<h2>Image Alignment<a class="headerlink" href="#image-alignment" title="Link to this heading"></a></h2>
+<p>The Align Layers section provides tools to align multiple microscopy channels or images.</p>
+<section id="align-with-blue-color">
+<h3>Align with Blue Color<a class="headerlink" href="#align-with-blue-color" title="Link to this heading"></a></h3>
+<p>A dropdown selection (Yes/No) to determine whether the blue fluorescence channel should be used as a reference for alignment. This is commonly used when DAPI or Hoechst staining is present in your samples.</p>
+</section>
+<section id="alignment-layer">
+<h3>Alignment Layer<a class="headerlink" href="#alignment-layer" title="Link to this heading"></a></h3>
+<p>A dropdown menu to select which channel should be used as the reference layer for alignment. The registration algorithm will align all other channels to this reference.</p>
+</section>
+<section id="cell-layer">
+<h3>Cell Layer<a class="headerlink" href="#cell-layer" title="Link to this heading"></a></h3>
+<p>Select which channel contains your cell morphology information. This is typically a channel that shows cell membranes, nuclei, or other cellular structures clearly.</p>
+</section>
+<section id="protein-detection-layer">
+<h3>Protein Detection Layer<a class="headerlink" href="#protein-detection-layer" title="Link to this heading"></a></h3>
+<p>Select the channel containing the protein of interest that you wish to analyze. This is typically where your target protein fluorescence is detected.</p>
+</section>
+<section id="alignment-settings">
+<h3>Alignment Settings<a class="headerlink" href="#alignment-settings" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Max Size</strong>: Sets the maximum dimension (in pixels) for processing during alignment (default: 23000). Larger images will be downsampled to this size.</p></li>
+<li><p><strong>Number of Tiles</strong>: Determines how many tiles the image will be divided into for alignment (default: 5). More tiles can improve alignment accuracy for complex images but increases processing time.</p></li>
+<li><p><strong>Overlap</strong>: Specifies the pixel overlap between adjacent tiles (default: 500). Proper overlap ensures seamless alignment between tiles.</p></li>
+</ul>
+<p>Once settings are configured, click <strong>Run</strong> to perform the alignment, or <strong>Cancel</strong> to abort the operation.</p>
+</section>
+</section>
+<section id="smoothing">
+<h2>Smoothing<a class="headerlink" href="#smoothing" title="Link to this heading"></a></h2>
+<p>The smoothing slider (0-100%) applies a smoothing algorithm to reduce noise in your images. The intensity of smoothing can be adjusted using the slider, with 0% representing no smoothing and 100% representing maximum smoothing.</p>
+<p>After adjusting the smoothing level, click <strong>Replace with smoothed layer</strong> to apply the changes.</p>
+</section>
+<section id="cell-segmentation">
+<h2>Cell Segmentation<a class="headerlink" href="#cell-segmentation" title="Link to this heading"></a></h2>
+<p>The StarDist Cell Segmentation section provides tools for automated cell detection using deep learning.</p>
+<section id="select-channel">
+<h3>Select Channel<a class="headerlink" href="#select-channel" title="Link to this heading"></a></h3>
+<p>Choose which image channel to use for cell detection. Typically this should be a channel that clearly shows cell boundaries or nuclei.</p>
+</section>
+<section id="pre-trained-2d-model">
+<h3>Pre-trained 2D Model<a class="headerlink" href="#pre-trained-2d-model" title="Link to this heading"></a></h3>
+<p>Select from available pre-trained StarDist models for cell segmentation. The default model (2D_versatile_fluo) works well for most fluorescence microscopy images.</p>
+</section>
+<section id="segmentation-parameters">
+<h3>Segmentation Parameters<a class="headerlink" href="#segmentation-parameters" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Percentile Low</strong>: Sets the lower percentile threshold for image normalization (default: 3.00).</p></li>
+<li><p><strong>Percentile High</strong>: Sets the upper percentile threshold for image normalization (default: 99.80).</p></li>
+<li><p><strong>Probability/Score Threshold</strong>: Defines the confidence threshold for cell detection (default: 0.48). Higher values result in more conservative detection.</p></li>
+<li><p><strong>Overlap Threshold</strong>: Determines how much overlap is allowed between adjacent cells (default: 0.30). Lower values allow more overlap.</p></li>
+</ul>
+</section>
+</section>
+<section id="technical-details">
+<h2>Technical Details<a class="headerlink" href="#technical-details" title="Link to this heading"></a></h2>
+<p>The Preprocessing tab leverages several advanced algorithms:</p>
+<ol class="arabic simple">
+<li><p><strong>Image Registration</strong>: Utilizes feature-based alignment techniques to precisely align different image channels or sequential images. The alignment process uses a tiled approach to handle large microscopy images efficiently.</p></li>
+<li><p><strong>StarDist Segmentation</strong>: Implements the StarDist deep learning model for accurate cell segmentation in fluorescence microscopy images. This model uses star-convex polygons to represent cell shapes and boundaries.</p></li>
+<li><p><strong>Parallel Processing</strong>: Operations utilize GPU acceleration when available for faster processing of large datasets.</p></li>
+</ol>
+</section>
+<section id="usage-tips">
+<h2>Usage Tips<a class="headerlink" href="#usage-tips" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>For optimal results, ensure that the alignment channel has clear, distinct features.</p></li>
+<li><p>When working with large datasets, consider reducing the Max Size parameter to speed up processing.</p></li>
+<li><p>Adjust segmentation parameters based on your specific cell type and image quality.</p></li>
+<li><p>For noisy images, apply smoothing before segmentation to improve detection accuracy.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial.html" class="btn btn-neutral float-left" title="Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="view.html" class="btn btn-neutral float-right" title="View" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Clark Fischer, Jason Chen, Jun Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

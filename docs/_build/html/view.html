@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View &mdash; MIST-Explorer March 2025 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=30eb7d5b"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Preprocessing" href="preprocessing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MIST-Explorer
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessing.html">Preprocessing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">View</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#interface-overview">Interface Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#layer-management">Layer Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#add-layer">Add Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-other-image">Add Other Image</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#layer-controls">Layer Controls</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#opacity">Opacity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contrast">Contrast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visibility">Visibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tint-color">Tint Color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-layer">Delete Layer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#visualization-canvas">Visualization Canvas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#region-selection-tools">Region Selection Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#data-loading-and-processing">Data Loading and Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#technical-details">Technical Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-tips">Usage Tips</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MIST-Explorer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">View</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/view.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="view">
+<h1>View<a class="headerlink" href="#view" title="Link to this heading"></a></h1>
+<p>The View tab provides powerful visualization and exploration capabilities for protein expression data and multi-channel microscopy images. This interface allows researchers to visualize, layer, and manipulate multiple data channels to gain insights into protein distribution at the single-cell level.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To include the view tab image in this documentation, save a screenshot of the view tab to the docs/source/_static directory with the filename “view_tab.png”.</p>
+</div>
+<a class="reference internal image-reference" href="_images/view_tab.png"><img alt="View tab interface" src="_images/view_tab.png" style="width: 600px;" />
+</a>
+<section id="interface-overview">
+<h2>Interface Overview<a class="headerlink" href="#interface-overview" title="Link to this heading"></a></h2>
+<p>The View tab consists of two main sections:</p>
+<ol class="arabic simple">
+<li><p><strong>Layer Control Panel</strong> (left): Manage individual protein/image layers and their display properties</p></li>
+<li><p><strong>Visualization Canvas</strong> (right): Display the combined image with interactive region selection tools</p></li>
+</ol>
+</section>
+<section id="layer-management">
+<h2>Layer Management<a class="headerlink" href="#layer-management" title="Link to this heading"></a></h2>
+<section id="add-layer">
+<h3>Add Layer<a class="headerlink" href="#add-layer" title="Link to this heading"></a></h3>
+<p>The “Add Layer” button allows you to select and add protein channels from your dataset to the visualization. Each protein channel is displayed as a separate layer that can be independently manipulated.</p>
+</section>
+<section id="add-other-image">
+<h3>Add Other Image<a class="headerlink" href="#add-other-image" title="Link to this heading"></a></h3>
+<p>Use this button to import additional images (PNG, JPG, TIFF, etc.) as overlays. This is useful for adding reference images or annotations to your visualization.</p>
+</section>
+</section>
+<section id="layer-controls">
+<h2>Layer Controls<a class="headerlink" href="#layer-controls" title="Link to this heading"></a></h2>
+<p>Each layer added to the visualization has its own control panel with the following options:</p>
+<section id="opacity">
+<h3>Opacity<a class="headerlink" href="#opacity" title="Link to this heading"></a></h3>
+<p>A slider control (0-100%) that adjusts the transparency of the layer. This allows for better visualization of overlapping features.</p>
+</section>
+<section id="contrast">
+<h3>Contrast<a class="headerlink" href="#contrast" title="Link to this heading"></a></h3>
+<p>A dual-slider control that adjusts the minimum and maximum intensity values displayed. This enables you to highlight specific intensity ranges within your data:</p>
+<ul class="simple">
+<li><p>Left slider: Sets the minimum intensity threshold (values below this will appear black)</p></li>
+<li><p>Right slider: Sets the maximum intensity threshold (values above this will be displayed at maximum brightness)</p></li>
+</ul>
+<p>Adjusting these values helps to reveal structures that might be hidden in the original intensity range.</p>
+</section>
+<section id="visibility">
+<h3>Visibility<a class="headerlink" href="#visibility" title="Link to this heading"></a></h3>
+<p>The “Toggle Visibility” button lets you show or hide specific layers without removing them from your layer stack. This is useful for comparing different protein expression patterns.</p>
+</section>
+<section id="tint-color">
+<h3>Tint Color<a class="headerlink" href="#tint-color" title="Link to this heading"></a></h3>
+<p>The “Select Tint Color” button opens a color selection dialog that allows you to apply a color tint to your grayscale protein data. Common colors include:</p>
+<ul class="simple">
+<li><p>Red, Green, Blue (primary colors for multi-channel visualization)</p></li>
+<li><p>Cyan, Magenta, Yellow (complementary colors)</p></li>
+<li><p>Custom colors for specific protein highlighting</p></li>
+</ul>
+</section>
+<section id="delete-layer">
+<h3>Delete Layer<a class="headerlink" href="#delete-layer" title="Link to this heading"></a></h3>
+<p>Removes the selected layer from the visualization.</p>
+</section>
+</section>
+<section id="visualization-canvas">
+<h2>Visualization Canvas<a class="headerlink" href="#visualization-canvas" title="Link to this heading"></a></h2>
+<p>The main canvas displays the combined image with all visible layers according to their opacity, contrast, and tint settings.</p>
+<section id="region-selection-tools">
+<h3>Region Selection Tools<a class="headerlink" href="#region-selection-tools" title="Link to this heading"></a></h3>
+<p>In the top right corner of the canvas, you’ll find tools for selecting regions of interest:</p>
+<ul class="simple">
+<li><p><strong>Rectangle Selection</strong>: Select rectangular regions for detailed analysis</p></li>
+<li><p><strong>Circle/Ellipse Selection</strong>: Select circular regions of interest</p></li>
+<li><p><strong>Custom Region Selection</strong>: Draw custom shapes to isolate specific structures</p></li>
+</ul>
+<p>These selection tools help you focus your analysis on specific areas of the image.</p>
+</section>
+</section>
+<section id="data-loading-and-processing">
+<h2>Data Loading and Processing<a class="headerlink" href="#data-loading-and-processing" title="Link to this heading"></a></h2>
+<p>Before visualization, you need to load your data:</p>
+<ol class="arabic simple">
+<li><p><strong>Open Image</strong>: Load the cell segmentation image (typically a StarDist output)</p></li>
+<li><p><strong>Open Cell Data</strong>: Load the corresponding protein expression data (CSV or Excel format)</p></li>
+<li><p><strong>Scale Down Factor</strong>: Adjust the image resolution for performance optimization</p></li>
+<li><p><strong>Apply</strong>: Process and prepare the data for visualization</p></li>
+</ol>
+<p>For large datasets, the application uses efficient parallel processing to handle the visualization rendering.</p>
+</section>
+<section id="technical-details">
+<h2>Technical Details<a class="headerlink" href="#technical-details" title="Link to this heading"></a></h2>
+<p>The View tab implements several advanced techniques for efficient protein visualization:</p>
+<ol class="arabic simple">
+<li><p><strong>JIT Compilation</strong>: Just-in-time compilation is used for the protein visualization algorithm to maximize performance.</p></li>
+<li><p><strong>Efficient Contrast Adjustment</strong>: Uses percentile-based windowing to enhance visual contrast without altering the underlying data.</p></li>
+<li><p><strong>Color Mapping</strong>: Applies scientific color maps to grayscale data for better differentiation of structures.</p></li>
+<li><p><strong>Layer Compositing</strong>: Uses alpha compositing for smooth blending of multiple protein channels.</p></li>
+</ol>
+</section>
+<section id="usage-tips">
+<h2>Usage Tips<a class="headerlink" href="#usage-tips" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Multi-channel Visualization</strong>: Assign different colors to different protein channels to create informative multi-channel overlays</p></li>
+<li><p><strong>Contrast Adjustment</strong>: For faint signals, narrow the contrast range to make them more visible</p></li>
+<li><p><strong>Strategic Coloring</strong>: Use complementary colors for proteins that co-localize to better visualize their spatial relationships</p></li>
+<li><p><strong>Region Selection</strong>: Use selection tools to focus on areas of interest for more detailed quantitative analysis</p></li>
+<li><p><strong>Layer Organization</strong>: Order your layers strategically with the most important data on top for optimal visualization</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="preprocessing.html" class="btn btn-neutral float-left" title="Preprocessing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Clark Fischer, Jason Chen, Jun Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
